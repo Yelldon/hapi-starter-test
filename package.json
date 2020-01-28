@@ -1,0 +1,25 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Greg Patrick",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^19.0.5",
+    "glob": "^7.1.6",
+    "knex": "^0.20.8",
+    "nodemon": "^2.0.2",
+    "objection": "^2.1.2",
+    "schwifty": "^5.2.1",
+    "sqlite3": "^4.1.1"
+  },
+  "directories": {
+    "controller": "/Controllers"
+  }
+}
