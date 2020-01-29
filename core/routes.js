@@ -1,4 +1,4 @@
-const PostController = require('./Controllers/PostController');
+const controllers = require('./controllers')
 
 const apiVersion = `v1`;
 const basePath = `/api/${apiVersion}`;
@@ -17,13 +17,13 @@ const routes = async server => {
     await server.route({
         method: 'GET',
         path: `${basePath}/post/{id}`,
-        handler: PostController.get
+        handler: controllers.PostController.get
     });
 
     await server.route({
         method: 'POST',
         path: `${basePath}/post`,
-        handler: PostController.post
+        handler: controllers.PostController.post
     });
 };
 

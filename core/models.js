@@ -5,9 +5,9 @@ const glob = require('glob')
 exports.plugin = {
     name: 'models',
     register: async (server, options) => {
-        let models = glob.sync('./Models/*.js');
+        let models = glob.sync('Models/*');
         models.forEach(model => {
-            let modelLoad = require(model)
+            let modelLoad = require(`../${model}`)
             modelLoad(server)
         })
     }

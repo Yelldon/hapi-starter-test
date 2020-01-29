@@ -1,4 +1,4 @@
-module.exports = {
+exports.PostController = {
     async get(request) {
         const { Post } = request.models();
 

@@ -2,7 +2,7 @@
 
 const Hapi = require('@hapi/hapi');
 const Schwifty = require('schwifty');
-const routes = require('./routes');
+const routes = require('./core/routes');
 
 const start = async () => {
     const serverOptions = {
@@ -24,7 +24,7 @@ const start = async () => {
             }
         }
     });
-    await server.register([require('./models')]);
+    await server.register([require('./core/models')]);
     await routes(server);
     await server.start();
 
