@@ -3,6 +3,7 @@
 const Hapi = require('@hapi/hapi');
 const Schwifty = require('schwifty');
 const routes = require('./core/routes');
+const plugins = require('./core/plugins');
 
 require('dotenv').config();
 
@@ -27,6 +28,7 @@ const start = async () => {
         }
     });
     await server.register([require('./core/models')]);
+    await server.register(plugins);
     await routes(server);
     await server.start();
 
