@@ -5,6 +5,8 @@ const Schwifty = require('schwifty');
 const routes = require('./core/routes');
 const plugins = require('./core/plugins');
 
+// require('test-repo');
+
 require('dotenv').config();
 
 const start = async () => {
@@ -22,17 +24,17 @@ const start = async () => {
                 client: 'sqlite3',
                 useNullAsDefault: true,
                 connection: {
-                    filename: process.env.DB_NAME
+                    filename: process.env.DB_NAME + '.sqlite'
                 }
             }
         }
     });
     await server.register([require('./core/models')]);
-    await server.register(plugins);
+    await plugins(server);
     await routes(server);
     await server.start();
 
-    console.log('Server running on %s', server.info.uri);
+    console.log('Server running at %s', server.info.uri);
 };
 
 process.on('unhandledRejection', err => {

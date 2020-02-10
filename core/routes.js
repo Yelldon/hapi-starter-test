@@ -1,7 +1,6 @@
-const controllers = require('./controllers')
+const controllers = require('./controllers');
 
-const apiVersion = `v1`;
-const basePath = `/api/${apiVersion}`;
+const basePath = `/v1`;
 
 ('use strict');
 

@@ -1,7 +1,7 @@
 exports.plugin = {
     name: 'admin',
     version: '1.0.0',
-    register: async function(server, options) {
+    register: async (server, options) => {
         // Create a route for example
         server.route({
             method: 'GET',

@@ -2,11 +2,19 @@ const glob = require('glob');
 
 ('use strict');
 
+const pluginPaths = glob.sync('plugins/*');
 const plugins = [];
 
-const pluginPaths = glob.sync('plugins/*');
-pluginPaths.forEach(plugin => {
-    plugins.push(require(`../${plugin}`));
-});
+const pluginsLoad = async server => {
+    pluginPaths.forEach(plugin => {
+        plugins.push(require(`../${plugin}`));
+    });
 
-module.exports = plugins;
+    await server.register(plugins, {
+        routes: {
+            prefix: '/api'
+        }
+    });
+};
+
+module.exports = pluginsLoad;
