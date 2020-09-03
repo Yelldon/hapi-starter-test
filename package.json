@@ -11,7 +11,7 @@
     "author": "Greg Patrick",
     "license": "ISC",
     "dependencies": {
-        "@hapi/hapi": "^19.0.5",
+        "@hapi/hapi": "^19.1.1",
         "test-repo": "git+https://git@github.com/circulatejs/test-repo",
         "dotenv": "^8.2.0",
         "glob": "^7.1.6",
