@@ -15,7 +15,7 @@
         "test-repo": "git+https://git@github.com/circulatejs/test-repo",
         "dotenv": "^8.2.0",
         "glob": "^7.1.6",
-        "knex": "^0.20.8",
+        "knex": "^2.4.0",
         "objection": "^2.1.2",
         "schwifty": "^5.2.1",
         "sqlite3": "^4.1.1"
